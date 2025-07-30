@@ -10,5 +10,6 @@ run conda install -n sar_eddy_env timm -c conda-forge -y --quiet
 
 
 copy sar_eddy_detector_demo/ .
+copy run.sh .
 
-CMD ["conda" , "run", "-n", "sar_eddy_env", "python", "src/main.py", "--config", "config/inference.yaml"]
+CMD ["sh" , "run.sh"]
