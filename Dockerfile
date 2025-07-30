@@ -6,6 +6,8 @@ run conda install -n sar_eddy_env pandas rasterio libgdal geopandas shapely tqdm
 #run conda install -n sar_eddy_env pandas rasterio libgdal "geopandas>1.0.0" shapely tqdm pyyaml -c conda-forge -y --quiet
 run conda install -n sar_eddy_env pytorch torchvision -c conda-forge -y --quiet
 run conda install -n sar_eddy_env timm -c conda-forge -y --quiet
+run conda install -n sar_eddy_env awscli  -c conda-forge -y --quiet
+
 #run conda install -n sar_eddy_env pytorch torchvision -c conda-forge -y --quiet
 
 WORKDIR /app
