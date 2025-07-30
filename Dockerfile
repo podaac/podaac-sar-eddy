@@ -8,8 +8,9 @@ run conda install -n sar_eddy_env pytorch torchvision -c conda-forge -y --quiet
 run conda install -n sar_eddy_env timm -c conda-forge -y --quiet
 #run conda install -n sar_eddy_env pytorch torchvision -c conda-forge -y --quiet
 
+WORKDIR /app
 
-copy sar_eddy_detector_demo/ .
+copy sar_eddy_detector_demo/ . 
 copy run.sh .
 
 CMD ["sh" , "run.sh"]
