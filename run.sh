@@ -20,7 +20,8 @@ cat config/hyp3/granules_batch.yaml
 
 
 # disable timm_xgb nference for now
-conda run -n sar_eddy_env python src/main.py hyp3=granules_batch #inference=timm_xgb
+# hydra/job_logging=disabled = turn off hydra logging config, see if we get stdout logging
+conda run -n sar_eddy_env python src/main.py hyp3=granules_batch hydra/job_logging=disabled #inference=timm_xgb
 
 tar -czvf outputs.tar.gz -C output .
 conda run -n sar_eddy_env aws s3 cp outputs.tar.gz s3://$OUTPUT_BUCKET_NAME/sar_eddy/${SAR_TASK_ID}_outputs.tar.gz --region us-west-2
