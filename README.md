@@ -120,9 +120,7 @@ See [`sar_eddy_detector_demo/README.md`](sar_eddy_detector_demo/README.md) for c
 ## Documentation
 
 For detailed information, see:
-- **[Installation Guide](sar_eddy_detector_demo/INSTALLATION.md)**: Complete setup instructions
-- **[Main Documentation](sar_eddy_detector_demo/README.md)**: Comprehensive usage guide
-- **[Project Structure](sar_eddy_detector_demo/STRUCTURE.md)**: Detailed directory layout
+- **[Main Documentation](https://github.com/jpl-slice/sar_eddy_detector_demo/README.md)**: Comprehensive usage guide
 
 ## Support
 
