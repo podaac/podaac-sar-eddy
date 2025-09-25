@@ -10,6 +10,6 @@ run apt-get update; apt-get install --no-install-recommends --yes jq; python -m 
 WORKDIR /app
 
 copy sar_eddy_detector_demo/ . 
-copy run.sh .
+copy run.sh run_hype.sh run_inference.sh .
 
 CMD ["sh" , "run.sh"]
