@@ -12,7 +12,8 @@ WORKDIR /app
 run apt-get install -y vim
 
 copy sar_eddy_detector_demo/ . 
-copy run.sh run_hype.sh run_inference.sh create_archive.sh .
+copy run.sh run_hype.sh run_inference.sh create_archive.sh generate_name.sh .
 run chmod +x create_archive.sh
+run chmod +x generate_name.sh
 
 CMD ["sh" , "run_hype.sh"]
