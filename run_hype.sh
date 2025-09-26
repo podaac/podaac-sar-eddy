@@ -18,10 +18,14 @@ EOF
 conda run -n sar_eddy_env aws s3 cp s3://$OUTPUT_BUCKET_NAME/$SEARCH_RESULTS_KEY config/hyp3/granules_batch.yaml
 cat config/hyp3/granules_batch.yaml
 
-
 # disable timm_xgb nference for now
 # hydra/job_logging=disabled = turn off hydra logging config, see if we get stdout logging
 conda run --no-capture-output -n sar_eddy_env python src/main.py mode=hyp3_only hyp3=granules_batch #hydra/job_logging=disabled #inference=timm_xgb
 
-tar -czvf outputs.tar.gz -C output .
-conda run -n sar_eddy_env aws s3 cp outputs.tar.gz s3://$OUTPUT_BUCKET_NAME/sar_eddy/${SAR_TASK_ID}_outputs.tar.gz --region us-west-2
+#create archives of single granules
+./create_archive.sh
+
+#upload outputs here...
+aws s3 sync . s3://$OUTPUT_BUCKET_NAME/sar_eddy/to_process/ --exclude "*" --include "S1A*.tar.gz"
+
+
