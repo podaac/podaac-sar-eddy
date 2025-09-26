@@ -9,7 +9,10 @@ run apt-get update; apt-get install --no-install-recommends --yes jq; python -m 
 
 WORKDIR /app
 
-copy sar_eddy_detector_demo/ . 
-copy run.sh run_hype.sh run_inference.sh .
+run apt-get install -y vim
 
-CMD ["sh" , "run.sh"]
+copy sar_eddy_detector_demo/ . 
+copy run.sh run_hype.sh run_inference.sh create_archive.sh .
+run chmod +x create_archive.sh
+
+CMD ["sh" , "run_hype.sh"]
